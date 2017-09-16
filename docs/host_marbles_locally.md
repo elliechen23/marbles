@@ -89,7 +89,7 @@ debug: Open your browser to http://localhost:3001 and login as "admin" to initia
 
 1. Go to your browser at the url specified in the console and login. You do not need to enter a password or change the prefilled username of `admin`.
 
-![](/doc_images/localhost2.png)
+![](/doc_images/local-login.png)
 	
 
 2. Next the set up panel should pop up. Ideally it will walk itself through the 3 stages of initial setup.
