@@ -94,27 +94,27 @@ debug: Open your browser to http://localhost:3001 and login as "admin" to initia
 
 **Next the set up panel should pop up. Ideally it will walk itself through the 4 stages of initial setup.**
 	
-	* 1 Check Configuration Files: 
-	- The first step was to check your config JSON files for easy to make mistakes. 
-	- The file that was checked can be found in /config/marbles_local.json.
+* 1 Check Configuration Files: 
+	* The first step was to check your config JSON files for easy to make mistakes. 
+	* The file that was checked can be found in /config/marbles_local.json.
 
 ![](/doc_images/step1.png)
 
-	* 2 Enrolling Admin: 
-	- Next up, we attempted to enroll you as your company's admin. 
-	- This step contacted your Certificate Authority (CA) and fed it the enrollID and enrollSecret from your creds file. 
+* 2 Enrolling Admin: 
+	* Next up, we attempted to enroll you as your company's admin. 
+	* This step contacted your Certificate Authority (CA) and fed it the enrollID and enrollSecret from your creds file. 
 
 ![](/doc_images/step2.png)
 		
-	* 3 Finding Chaincode: 
-	- Now we needed to locate the chaincode on your channel. 
-	- Your creds file says to check the channel mychannel  for the chaincode named marbles.
+* 3 Finding Chaincode: 
+	* Now we needed to locate the chaincode on your channel. 
+	* Your creds file says to check the channel mychannel  for the chaincode named marbles.
 
 ![](/doc_images/step3.png)
 
-	* 4 Create Assets: 
-	- Almost there! As a marbles trading company you may bring new marble owners onboard. 
-	- These marble owners represent your user base. This step will create the marble owners and 3 marbles per owner.
+* 4 Create Assets: 
+	* Almost there! As a marbles trading company you may bring new marble owners onboard. 
+	* These marble owners represent your user base. This step will create the marble owners and 3 marbles per owner.
 
 ![](/doc_images/step4.png)
         
@@ -123,5 +123,20 @@ debug: Open your browser to http://localhost:3001 and login as "admin" to initia
 * Your marbles application is ready to use!
 
 ![](/doc_images/step5.png)
+
+**Final result:**
+
+```
+info: Fetching EVERYTHING...
+debug: [fcw] Querying Chaincode: read_everything()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read_everything, args=[], txId=null
+debug: [fcw] Peer Query Response - len: 1769 type: object
+debug: [fcw] Successful query transaction.
+
+debug: [checking] number of owners: 3
+debug: [checking] number of marbles: 9
+debug: [checking] there are new things, sending to all clients
+debug: [ws] broadcasting to clients.  1 everything
+```
 		
 * Marbles is all setup! Now [continue the tutorial](../README.md#use).
