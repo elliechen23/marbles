@@ -150,3 +150,73 @@ debug: [ws] broadcasting to clients.  1 everything
 ```
 		
 * Marbles is all setup! Now [continue the tutorial](../README.md#use).
+
+* Rerun Marbles
+
+    > cd marbles
+    > gulp marbles_local	  
+    
+**Output:**
+```
+[21:39:13] Using gulpfile ~/marbles/gulpfile.js
+[21:39:13] Starting 'env_local'...
+[21:39:13] Finished 'env_local' after 117 μs
+[21:39:13] Starting 'build-sass'...
+[21:39:13] Finished 'build-sass' after 19 ms
+[21:39:13] Starting 'watch-sass'...
+[21:39:13] Finished 'watch-sass' after 20 ms
+[21:39:13] Starting 'watch-server'...
+[21:39:13] Finished 'watch-server' after 13 ms
+[21:39:13] Starting 'server'...
+info: Checking credentials file is done
+info: Loaded config file /home/slim/marbles/config/marbles_local.json
+info: Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+info: Loaded config file /home/slim/marbles/config/marbles_local.json
+info: Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+debug: cache busting hash js 1505569154658 css 1505569154658
+Loaded config file /home/slim/marbles/config/marbles_local.json
+Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+
+
+----------------------------------- Server Up - localhost:3001 -----------------------------------
+------------------------------------------ Websocket Up ------------------------------------------
+
+
+info: Using settings in marbles_local.json to see if we have launch marbles before...
+info: [fcw] Going to enroll peer_urls=[grpc://localhost:7051], channel_id=mychannel, uuid=marbles-Docker Compose Network-mychannel-fabric-peer-org1, ca_url=http://localhost:7054, orderer_url=grpc://localhost:7050, enroll_id=PeerAdmin, enroll_secret=-, msp_id=Org1MSP, kvs_path=/home/slim/marbles/config/crypto/prebaked/
+info: [fcw] Successfully loaded enrollment from persistence
+debug: added peer grpc://localhost:7051
+debug: [fcw] Successfully got enrollment marbles-Docker Compose Network-mychannel-fabric-peer-org1
+info: Success enrolling admin
+debug: Checking if chaincode is already instantiated or not
+
+info: Checking for chaincode...
+debug: [fcw] Querying Chaincode: read()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read, args=[selftest], txId=null
+debug: [fcw] Peer Query Response - len: 5 type: number
+debug: [fcw] Successful query transaction.
+
+----------------------------- Chaincode found on channel "mychannel" -----------------------------
+
+
+info: Checking chaincode and ui compatibility...
+debug: [fcw] Querying Chaincode: read()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read, args=[marbles_ui], txId=null
+warn: [fcw] warning - query resp is not json, might be okay: string 4.0.0
+debug: [fcw] Successful query transaction.
+info: Chaincode version is good
+info: Checking ledger for marble owners listed in the config file
+
+info: Fetching EVERYTHING...
+debug: [fcw] Querying Chaincode: read_everything()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read_everything, args=[], txId=null
+debug: [fcw] Peer Query Response - len: 1769 type: object
+debug: [fcw] Successful query transaction.
+debug: Looking for marble owner: amy
+debug: Looking for marble owner: alice
+debug: Looking for marble owner: ava
+info: Everything is in place
+debug: Detected that we have launched successfully before
+debug: Welcome back - Initiating start up
+
+```
