@@ -6,7 +6,7 @@ Install marbles npm dependencies by navigating back to the root of the marble di
 If you already ran these commands, it's safe to run them again.
 
 ```bash
-cd ../../
+cd marbles
 npm install
 ```
 
@@ -41,6 +41,30 @@ cd ./scripts
 node install_chaincode.js
 ```
 
+**Output:**
+```bash
+info: Using default config file marbles_local.json
+info: Loaded config file /home/slim/marbles/config/marbles_local.json
+info: Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+---------------------------------------
+info: Lets install some chaincode - marbles v4
+---------------------------------------
+info: First we enroll
+info: [fcw] Going to enroll with admin cert!  peer_urls=[grpc://localhost:7051], channel_id=mychannel, uuid=marbles-Docker Compose Network-mychannel-fabric-peer-org1, orderer_url=grpc://localhost:7050, msp_id=Org1MSP
+debug: added peer grpc://localhost:7051
+debug: [fcw] Successfully got enrollment marbles-Docker Compose Network-mychannel-fabric-peer-org1
+---------------------------------------
+info: Now we install
+---------------------------------------
+debug: [fcw] Installing Chaincode
+debug: [fcw] Sending install req targets=[grpc.primary_user_agent=grpc-node/1.2.4, _url=grpc://localhost:7051, addr=localhost:7051, , _request_timeout=90000, , _name=null], chaincodePath=marbles, chaincodeId=marbles, chaincodeVersion=v4
+info: [packager/Golang.js]: packaging GOLANG from marbles
+debug: [fcw] Successfully obtained transaction endorsement
+---------------------------------------
+info: Install done. Errors: nope
+---------------------------------------
+```
+
 ### Instantiate chaincode
 Next we need to instantiate the chaincode. 
 This will have the peer spin up the marbles chaincode for your channel `mychannel`. 
@@ -50,6 +74,32 @@ Use the commands below:
 ```bash
 node instantiate_chaincode.js
 ```
+
+**Output:**
+```
+info: Using default config file marbles_local.json
+info: Loaded config file /home/slim/marbles/config/marbles_local.json
+info: Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+---------------------------------------
+info: Lets instantiate some chaincode - marbles v4
+---------------------------------------
+warn: Note: the chaincode should have been installed before running this script
+info: First we enroll
+info: [fcw] Going to enroll with admin cert!  peer_urls=[grpc://localhost:7051], channel_id=mychannel, uuid=marbles-Docker Compose Network-mychannel-fabric-peer-org1, orderer_url=grpc://localhost:7050, msp_id=Org1MSP
+debug: added peer grpc://localhost:7051
+debug: [fcw] Successfully got enrollment marbles-Docker Compose Network-mychannel-fabric-peer-org1
+---------------------------------------
+info: Now we instantiate
+---------------------------------------
+debug: [fcw] Instantiating Chaincode peer_urls=[grpc://localhost:7051], channel_id=mychannel, chaincode_id=marbles, chaincode_version=v4, cc_args=[12345], ssl-target-name-override=null, pem=null
+debug: [fcw] Sending instantiate req targets=[grpc.primary_user_agent=grpc-node/1.2.4, _url=grpc://localhost:7051, addr=localhost:7051, , _request_timeout=90000, , _name=null], chaincodeId=marbles, chaincodeVersion=v4, fcn=init, args=[12345], 0=8, 1=31, 2=74, 3=112, 4=55, 5=221, 6=13, 7=88, 8=176, 9=251, 10=169, 11=29, 12=143, 13=114, 14=207, 15=208, 16=127, 17=137, 18=93, 19=58, 20=197, 21=49, 22=188, 23=12, _transaction_id=8919996c9ab114ca9fa9b731487185b1c32bafb5b148a6a731eef4419775a660
+debug: [fcw] Successfully obtained transaction endorsement
+debug: [fcw] Successfully ordered instantiate endorsement.
+---------------------------------------
+info: Instantiate done. Errors: nope
+---------------------------------------
+```
+
 
 ### Finish Up
 
