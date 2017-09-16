@@ -92,7 +92,7 @@ debug: Open your browser to http://localhost:3001 and login as "admin" to initia
 ![](/doc_images/local-login.png)
 	
 
-* Next the set up panel should pop up. Ideally it will walk itself through the 4 stages of initial setup.
+**Next the set up panel should pop up. Ideally it will walk itself through the 4 stages of initial setup.**
 	
 	* 1 Check Configuration Files: 
 	- The first step was to check your config JSON files for easy to make mistakes. The file that was checked can be found in /config/marbles_local.json.
