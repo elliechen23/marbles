@@ -127,6 +127,15 @@ debug: Open your browser to http://localhost:3001 and login as "admin" to initia
 **Final result:**
 
 ```
+------------------------------------------ All Done ------------------------------------------
+
+debug: [ws] broadcasting to clients.  1 app_state
+debug: [fcw] Querying Channel Stats
+
+info: New block detected! 6 low=6, high=0, unsigned=true, currentBlockHash=861220013062696518000000460086020021044905800009100020009805588000000078578009604809411900005968270, previousBlockHash=861220013062696518000000460086020021044905800009100020009805588000000078578009604809411900005968270
+debug: [checking] there are new things, sending to all clients
+debug: [ws] broadcasting to clients.  1 block
+
 info: Fetching EVERYTHING...
 debug: [fcw] Querying Chaincode: read_everything()
 debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read_everything, args=[], txId=null
@@ -137,6 +146,7 @@ debug: [checking] number of owners: 3
 debug: [checking] number of marbles: 9
 debug: [checking] there are new things, sending to all clients
 debug: [ws] broadcasting to clients.  1 everything
+
 ```
 		
 * Marbles is all setup! Now [continue the tutorial](../README.md#use).
