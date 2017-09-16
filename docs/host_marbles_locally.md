@@ -153,7 +153,6 @@ debug: [ws] broadcasting to clients.  1 everything
 
 * Rerun Marbles
 
-    > cd marbles
     > gulp marbles_local	  
     
 **Output:**
