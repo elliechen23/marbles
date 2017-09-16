@@ -92,28 +92,28 @@ debug: Open your browser to http://localhost:3001 and login as "admin" to initia
 ![](/doc_images/local-login.png)
 	
 
-2. Next the set up panel should pop up. Ideally it will walk itself through the 4 stages of initial setup.
+1. Next the set up panel should pop up. Ideally it will walk itself through the 4 stages of initial setup.
 	
 	1. Check Configuration Files: The first step was to check your config JSON files for easy to make mistakes. The file that was checked can be found in /config/marbles_local.json.
 
 ![Image of ellie](/doc_images/step1.png)
 
-	2. Enrolling Admin: Next up, we attempted to enroll you as your company's admin. This step contacted your Certificate Authority (CA) and fed it the enrollID and enrollSecret from your creds file. 
+	1. Enrolling Admin: Next up, we attempted to enroll you as your company's admin. This step contacted your Certificate Authority (CA) and fed it the enrollID and enrollSecret from your creds file. 
 
 ![Image of ellie](/doc_images/step2.png)
 		
-	3. Finding Chaincode: Now we needed to locate the chaincode on your channel. Your creds file says to check the channel mychannel  for the chaincode named marbles.
+	1. Finding Chaincode: Now we needed to locate the chaincode on your channel. Your creds file says to check the channel mychannel  for the chaincode named marbles.
 
 ![Image of ellie](/doc_images/step3.png)
 
-	4. Create Assets:- Almost there! As a marbles trading company you may bring new marble owners onboard. These marble owners represent your user base. This step will create the marble owners and 3 marbles per owner.
+	1. Create Assets:- Almost there! As a marbles trading company you may bring new marble owners onboard. These marble owners represent your user base. This step will create the marble owners and 3 marbles per owner.
 
 ![Image of ellie](/doc_images/step4.png)
         
 
 
-3. Your marbles application is ready to use!
+1. Your marbles application is ready to use!
 
 ![Image of ellie](/doc_images/step5.png)
 		
-4. Marbles is all setup! Now [continue the tutorial](../README.md#use).
+1. Marbles is all setup! Now [continue the tutorial](../README.md#use).
