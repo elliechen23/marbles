@@ -6,6 +6,7 @@
 1. Open a command prompt/terminal and navigate to the marbles directory.
 1. In the command prompt/terminal type:
 	
+		> cd marbles
 		> npm install gulp -g
 		> npm install
 
@@ -14,30 +15,95 @@
 - **Option 1:** :lollipop: If you are using a local network use this command:
 	> gulp marbles_local
 
+
 - **Option 2:** If you are using a bluemix network, use this command:
 	> gulp marbles_tls
 
 1. If all goes well you should see this message in the console:
 
-![](/doc_images/localhost1.png)
+- **Output:**
+```
+[19:57:11] Using gulpfile ~/marbles/gulpfile.js
+[19:57:11] Starting 'env_local'...
+[19:57:11] Finished 'env_local' after 103 μs
+[19:57:11] Starting 'build-sass'...
+[19:57:11] Finished 'build-sass' after 12 ms
+[19:57:11] Starting 'watch-sass'...
+[19:57:11] Finished 'watch-sass' after 22 ms
+[19:57:11] Starting 'watch-server'...
+[19:57:11] Finished 'watch-server' after 9.53 ms
+[19:57:11] Starting 'server'...
+info: Checking credentials file is done
+info: Loaded config file /home/slim/marbles/config/marbles_local.json
+info: Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+[19:57:12] Starting 'build-sass'...
+[19:57:12] Finished 'build-sass' after 5.88 ms
+info: Loaded config file /home/slim/marbles/config/marbles_local.json
+info: Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+debug: cache busting hash js 1505563033127 css 1505563033127
+Loaded config file /home/slim/marbles/config/marbles_local.json
+Loaded creds file /home/slim/marbles/config/blockchain_creds_local.json
+
+
+----------------------------------- Server Up - localhost:3001 -----------------------------------
+------------------------------------------ Websocket Up ------------------------------------------
+
+
+info: Using settings in marbles_local.json to see if we have launch marbles before...
+info: [fcw] Going to enroll peer_urls=[grpc://localhost:7051], channel_id=mychannel, uuid=marbles-Docker Compose Network-mychannel-fabric-peer-org1, ca_url=http://localhost:7054, orderer_url=grpc://localhost:7050, enroll_id=PeerAdmin, enroll_secret=-, msp_id=Org1MSP, kvs_path=/home/slim/marbles/config/crypto/prebaked/
+info: [fcw] Successfully loaded enrollment from persistence
+debug: added peer grpc://localhost:7051
+debug: [fcw] Successfully got enrollment marbles-Docker Compose Network-mychannel-fabric-peer-org1
+info: Success enrolling admin
+debug: Checking if chaincode is already instantiated or not
+
+info: Checking for chaincode...
+debug: [fcw] Querying Chaincode: read()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read, args=[selftest], txId=null
+debug: [fcw] Peer Query Response - len: 5 type: number
+debug: [fcw] Successful query transaction.
+
+----------------------------- Chaincode found on channel "mychannel" -----------------------------
+
+
+info: Checking chaincode and ui compatibility...
+debug: [fcw] Querying Chaincode: read()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read, args=[marbles_ui], txId=null
+warn: [fcw] warning - query resp is not json, might be okay: string 4.0.0
+debug: [fcw] Successful query transaction.
+info: Chaincode version is good
+info: Checking ledger for marble owners listed in the config file
+
+info: Fetching EVERYTHING...
+debug: [fcw] Querying Chaincode: read_everything()
+debug: [fcw] Sending query req: chaincodeId=marbles, fcn=read_everything, args=[], txId=null
+debug: [fcw] Peer Query Response - len: 30 type: object
+debug: [fcw] Successful query transaction.
+debug: Looking for marble owner: amy
+debug: Did not find marble username: amy
+info: We need to make marble owners
+
+info: Detected that we have NOT launched successfully yet
+debug: Open your browser to http://localhost:3001 and login as "admin" to initiate startup
+```
 
 1. Go to your browser at the url specified in the console and login. You do not need to enter a password or change the prefilled username of `admin`.
 
 ![](/doc_images/localhost2.png)
 	
 
-1. Next the set up panel should pop up. Ideally it will walk itself through the 3 stages of initial setup.
+2. Next the set up panel should pop up. Ideally it will walk itself through the 3 stages of initial setup.
 	1. Enroll Admin - this step is communicating with your network's CA to verify the admin user credentials (enrollID/enrollSecret)
 		- If it fails double check the enrollID and enrollSecret fields in your blockchain credentials file
-	1. Finding Chaincode - this step is looking for the marbles chaincode on your peer. It is using the chaincode ID found in your blockchain credentials file. If this is a brand new network it will not exist yet. 
+	2. Finding Chaincode - this step is looking for the marbles chaincode on your peer. It is using the chaincode ID found in your blockchain credentials file. If this is a brand new network it will not exist yet. 
 		- If the chaincode was instantiated but it was unable to find it try the "Retry" button.
-	1. Register Marble Owners - this step will create the marble owners you specified in the marbles configuration JSON file
+	3. Register Marble Owners - this step will create the marble owners you specified in the marbles configuration JSON file
 		- This can take awhile 1-2minutes. Check your console logs for progress.
  
 ![](/doc_images/localhost3.png)
 
-1. Once you see this message you are good to go: 
+3. Once you see this message you are good to go: 
 
 ![](/doc_images/localhost4.png)
 		
-1. Marbles is all setup! Now [continue the tutorial](../README.md#use).
+4. Marbles is all setup! Now [continue the tutorial](../README.md#use).
